@@ -6,22 +6,22 @@ Neither the coin nor the die uses a random choice of its final face. The engine
 integrates the launch state and ground contacts; the upper face is measured only
 after the body rests.
 
-## Open and use
+## Opening and using the lab
 
-From the repository root, double-click **Run-Probability-Lab.cmd**. The launcher
-uses this project's existing `.venv`, CUDA, and local compilation caches. The
-first use of an object or batch size may take a minute to compile. The window
-shows progress. Close the window, or press Alt+F4, to stop the worker and save
-completed trials. No separate Genesis viewer window or screen capture is used.
+The lab opens by double-clicking **Run-Probability-Lab.cmd** in the repository
+root. The launcher uses this project's existing `.venv`, CUDA, and local
+compilation caches. The first use of an object or batch size may take a minute to
+compile. The window shows progress. Closing the window, or pressing Alt+F4, stops
+the worker and saves completed trials. No separate Genesis viewer window or screen
+capture is used.
 
-1. Open **Experiment settings / reset**, select Coin or Die and press
-   **Apply / reset experiment**. The previous
-   experiment is exported before resetting; different configurations are never
-   pooled in one frequency table.
-2. Press **Flip coin** or **Roll die**. Pause/resume, step one physical timestep,
-   and zoom in/out are available. A new roll abandons any unfinished visible roll;
+1. **Experiment settings / reset** selects Coin or Die, and **Apply / reset
+   experiment** applies the choice. The previous experiment is exported before
+   resetting; different configurations are never pooled in one frequency table.
+2. **Flip coin** or **Roll die** starts a visible roll. Pause/resume, a single
+   physical timestep, and zoom in/out are available. A new roll abandons any unfinished visible roll;
    abandoned rolls do not enter the statistics.
-3. Leave **Auto forecasts** enabled to evaluate the physical state near simulated
+3. With **Auto forecasts** enabled, the physical state is evaluated near simulated
    times 0, 0.30 and 0.65 seconds. The animation continues while the worker
    calculates forecasts. Each result is plotted at the time its state was
    observed. **Forecast now** also works during an active roll, including while
@@ -29,12 +29,13 @@ completed trials. No separate Genesis viewer window or screen capture is used.
    Forecasts retain their observation timestamps while the visible simulation
    continues; there is no automatic checkpoint pause or display acknowledgement.
    Experiment/roll identifiers reject late messages from older runs.
-4. Run a batch (128 trials by default) to grow the observed frequency table.
+4. A batch (128 trials by default) grows the observed frequency table.
    **Cancel calculation** retains completed chunks and discards the current
    incomplete chunk. Compilation itself cannot be cancelled except by closing.
-5. Change launch height, spin, sliding friction, seed, or the face-up launch
-   protocol, then **Apply / reset experiment** to compare a new experiment.
-6. Export JSON and CSV, or close the window to save automatically. Files go to
+5. Changing the launch height, spin, sliding friction, seed, or the face-up launch
+   protocol, followed by **Apply / reset experiment**, starts a new experiment for
+   comparison.
+6. Exporting JSON and CSV, or closing the window, saves the results. Files go to
    `out/probability/`; `launcher.log` contains diagnostics.
 
 The graphical application uses the already installed `imgui-bundle` (including
@@ -49,8 +50,8 @@ Python 3.12 and the installed CUDA PyTorch build. CPU mode is available by omitt
 .venv\Scripts\python.exe -m examples.probability.app -g --kind coin --batch 256 --dt 0.005
 ```
 
-For direct commands, use the cache environment variables in the launcher on a
-restricted Windows environment. They avoid writing caches outside the project.
+Direct commands on a restricted Windows environment use the cache environment
+variables set in the launcher. They avoid writing caches outside the project.
 
 ## Live vector layers and larger graphs
 
@@ -80,10 +81,10 @@ and follow the plane's normal and orientation.
 
 **Adjust vector scales** changes only arrow lengths. Arrows longer than 0.45 m
 are capped, with a warning in the detailed readout; numeric magnitudes remain
-uncapped. Zero vectors have no direction and are not drawn. Open **Force
-magnitudes, floor and starting-pose details** for velocity components, initial
-pose, friction coefficients and a per-contact table with force magnitudes in N,
-positions in m, and slip speed in m/s.
+uncapped. Zero vectors have no direction and are not drawn. The **Force
+magnitudes, floor and starting-pose details** section shows velocity components,
+initial pose, friction coefficients and a per-contact table with force magnitudes
+in N, positions in m, and slip speed in m/s.
 
 For each rendered frame, public Genesis getters supply COM velocities, world
 angular velocity and actual solver contact forces on the coin/die. With contact
@@ -105,9 +106,9 @@ solver and physical parameters are unchanged.
 
 The probability panel now uses 44% of the window width. Charts have thicker
 lines, marked forecast samples and a minimum height of 360 pixels, increasing
-with a taller window. Use **Minimum chart height** or **Enlarge graphs** for
-larger plots. The enlarged window is resizable; turn off **Auto-fit axes** to
-pan and zoom either plot. The forecast graph fits the available observation
+with a taller window. **Minimum chart height** and **Enlarge graphs** give
+larger plots. The enlarged window is resizable, and turning off **Auto-fit axes**
+allows panning and zooming either plot. The forecast graph fits the available observation
 times and includes unresolved futures, so probability mass remains visible
 when a simulated coin stays on its edge or exceeds the time limit.
 
@@ -225,7 +226,7 @@ as a dashboard PNG. It does not record the desktop. The results are experiment
 artifacts, not evidence that this model reproduces real coin or die frequencies.
 Experiment controls are disabled during `--smoke` so clicks cannot change the
 automated sequence. It also verifies that simulation time advances while a
-forecast is being calculated. Use headless `--batch` for a fixed-size experiment.
+forecast is being calculated. Headless `--batch` runs a fixed-size experiment.
 
 ### Verified locally on 2026-11-11
 
@@ -268,7 +269,7 @@ The raw batch reports are
 `out/probability/coin-20261111T062350535885Z.json` and
 `out/probability/die-20261111T062459906447Z.json`, with matching CSV files.
 
-Before claiming physical accuracy, measure real launch/contact parameters,
-compare with physical trials, test timestep and solver sensitivity across many
-seeds, and evaluate forecast calibration on held-out rolls. Those studies are
+A claim of physical accuracy would need measured real launch/contact parameters,
+comparison with physical trials, timestep and solver sensitivity tests across many
+seeds, and forecast calibration evaluated on held-out rolls. Those studies are
 outside this initial interface implementation.

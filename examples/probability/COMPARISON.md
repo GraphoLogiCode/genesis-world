@@ -36,7 +36,7 @@ same-side prediction as a floor-bounce measurement or an orientation-error trace
 This search did not locate a ready-to-use dataset meeting all the requested
 conditions; that is not a claim that none exists.
 
-For a matched study, record your own marked coin on a measured surface:
+A matched study records its own marked coin on a measured surface, in these steps:
 
 1. Measure mass, radius, thickness and the floor plane; identify the actual
    material and finish. Use a consistent coin, patch of floor and release protocol.
@@ -87,7 +87,7 @@ trial_id,t_s,x_m,y_m,z_m,qw,qx,qy,qz,vx_m_s,vy_m_s,vz_m_s,wx_rad_s,wy_rad_s,wz_r
   norm within 1% of one (renormalized). Do not concatenate repeated exports as
   independent tosses. Include full time series, not just release/final rows.
 - The default maximum tracking gap is 20 ms. This is an input guard, not a claim
-  that 20 ms resolves your impacts. Set a stricter limit based on the experiment.
+  that 20 ms resolves the impacts. A stricter limit is set based on the experiment.
 
 `demo` writes a complete example CSV and `experiment.json`. Replace the example
 with measured values and set `data_kind` to `measured` only for actual measurements.
@@ -229,8 +229,8 @@ have been tuned to real data in the supplied example.**
 Changing the RNG seed does not change a deterministic rigid-body trajectory
 when the initial state and parameters are identical. Replays explicitly request
 deterministic algorithms and add no launch perturbations. Seeds are reproducibility
-checks. If you later model camera/release uncertainty, specify and validate that
-error model separately; these runs do not invent sensor noise. Bitwise agreement
+checks. Any camera/release uncertainty modeled later needs its own specified and
+validated error model; these runs do not invent sensor noise. Bitwise agreement
 across devices or Genesis versions is not promised.
 
 ## Metrics and uncertainty

@@ -52,7 +52,7 @@ published aggregate. No synthetic outcomes are used in this chart.
    469 (2008), 59-92](https://doi.org/10.1016/j.physrep.2008.08.003).
    Section 2 describes high-speed experiments at 1500 frames/s. Section 5
    presents numerical results. A numerical graph in a paper is not automatically
-   a real-world measurement, and these experiments do not match our current setup.
+   a real-world measurement, and these experiments do not match the current setup.
 
 ## Why this does not yet measure simulator accuracy
 
