@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/2c857a52-bca0-4b52-ae38-52206615a5d1
+
 # Genesis Probability Lab
 
 A coin and a die tossed inside a physics simulation, to see how often each face lands.
