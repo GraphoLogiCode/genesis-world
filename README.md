@@ -1,3 +1,7 @@
+> **This fork adds the Genesis Probability Lab.** It flips a coin or rolls a die in the Genesis physics engine and tracks how often each face lands. It is a personal project and is not part of the official Genesis World release. The demo, setup steps and caveats are in [examples/probability](examples/probability/README.md).
+>
+> [![Preview of the Probability Lab](examples/probability/demo_preview.gif)](examples/probability/README.md)
+
 ![Genesis World teaser](https://raw.githubusercontent.com/Genesis-Embodied-AI/genesis-world/readme-assets/videos/HeroShot_Final.png)
 
 # Genesis World
