@@ -1,16 +1,12 @@
-
-
-https://github.com/user-attachments/assets/2c857a52-bca0-4b52-ae38-52206615a5d1
-
 # Genesis Probability Lab
 
 A coin and a die are tossed inside a physics simulation, and the lab records how often each face lands.
 
 This repository is a personal fork of **[Genesis World](https://github.com/Genesis-Embodied-AI/genesis-world)**, the open-source physics simulator from the Genesis team. The original repository is the reference for the simulator itself, including installation, documentation and citation. The fork adds one example application and is not part of the official release. The original `LICENSE` (Apache-2.0) is kept.
 
-[![Preview of the Probability Lab](examples/probability/demo_preview.gif)](examples/probability/README.md)
+https://github.com/user-attachments/assets/2c857a52-bca0-4b52-ae38-52206615a5d1
 
-The preview is silent and sped up. The full demo video, setup steps and caveats are in [examples/probability/README.md](examples/probability/README.md).
+The demo video above has captions. Setup steps and caveats are in [examples/probability/README.md](examples/probability/README.md).
 
 ## How the lab uses Genesis
 
