@@ -42,7 +42,7 @@ For the Probability Lab, each box maps to the code in [examples/probability](exa
 
 | Diagram box | In the Probability Lab |
 | --- | --- |
-| Your Python program | `worker.py` drives the loop and `app.py` is the window |
+| Python program | `worker.py` drives the loop and `app.py` is the window |
 | Scene | A `gs.Scene` built in `world.py`: gravity (0, 0, -9.81), a time step `dt` with two substeps, a floor and one coin or die. `n_envs` builds many independent copies, so a whole batch of tosses runs in parallel on the GPU |
 | Issue commands | For each toss, set the starting position, orientation and velocity of every copy |
 | `scene.step()` | One call per time step |
